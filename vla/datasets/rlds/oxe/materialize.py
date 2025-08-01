@@ -50,6 +50,11 @@ def make_oxe_dataset_kwargs(
         dataset_kwargs["absolute_proprio_mask"] = [False] * 9 + [True]
         dataset_kwargs["action_normalization_mask"] = ([True] * 9 + [False]) * action_chunk
         dataset_kwargs["proprio_normalization_mask"] = [True] * 9 + [False]
+    elif dataset_kwargs["action_encoding"] is ActionEncoding.JOINT_POS_BIMANUAL:
+        dataset_kwargs["absolute_action_mask"] = ([False] * 7 + [True] + [False] * 7 + [True]) * action_chunk
+        dataset_kwargs["absolute_proprio_mask"] = [False] * 7 + [True] + [False] * 7 + [True]
+        dataset_kwargs["action_normalization_mask"] = ([True] * 7 + [False] + [True] * 7 + [False]) * action_chunk
+        dataset_kwargs["proprio_normalization_mask"] = [True] * 7 + [False] + [True] * 7 + [False]
     dataset_kwargs["action_proprio_normalization_type"] = action_proprio_normalization_type
 
     # Adjust Loaded Camera Views
