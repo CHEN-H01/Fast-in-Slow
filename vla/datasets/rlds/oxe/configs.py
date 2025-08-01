@@ -75,6 +75,13 @@ OXE_DATASET_CONFIGS = {
         "state_encoding": StateEncoding.POS_QUAT_BI,
         "action_encoding": ActionEncoding.EEF_POS_BI,
     },
+    "rlbench_bi_joint": {
+        "image_obs_keys": {"right_fast": "image_right_fast", "left_fast": "image_left_fast", "head_fast": "image_head_fast", "right_slow": "image_right_slow", "left_slow": "image_left_slow", "head_slow": "image_head_slow"},
+        "depth_obs_keys": {"primary": None, "secondary": None, "wrist": None},
+        "state_obs_keys": ["base_pose_tool_reached", "gripper_closed"],
+        "state_encoding": StateEncoding.JOINT_BIMANUAL,
+        "action_encoding": ActionEncoding.JOINT_POS_BIMANUAL,
+    },
     "rtx_dataset": {
         "image_obs_keys": {"primary": "image", "secondary": None, "wrist": None},
         "depth_obs_keys": {"primary": None, "secondary": None, "wrist": None},
