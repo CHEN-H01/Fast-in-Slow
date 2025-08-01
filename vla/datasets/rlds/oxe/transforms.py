@@ -903,5 +903,6 @@ OXE_STANDARDIZATION_TRANSFORMS = {
     "custom_finetuning": identity_transform,
     "rlbench": identity_transform,
     "rlbench_bi": identity_transform,
+    "rlbench_bi_joint": identity_transform,
     "rtx_dataset": identity_transform,
 }
